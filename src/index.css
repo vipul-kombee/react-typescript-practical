@@ -1,0 +1,222 @@
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+/* Left Panel - Full Height */
+.login-left-panel {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center all content */
+  text-align: center;
+  position: relative;
+  padding: 20px;
+}
+
+/* Welcome Text - Responsive */
+.welcome-text {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 500;
+  max-width: 80%;
+  text-align: center;
+}
+
+/* Brand Title - Scales Down on Small Screens */
+.brand-title {
+  font-size: 2.5rem;
+}
+
+/* Footer Text - Stays at Bottom */
+.footer-text {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Media Queries for Full Responsiveness */
+@media (max-width: 992px) {
+  .welcome-text {
+    font-size: 1.5rem;
+  }
+  .brand-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-fluid {
+    flex-direction: column; /* Stack panels vertically */
+  }
+  .login-left-panel {
+    width: 100%;
+    height: 50vh; /* Adjust height for better spacing */
+  }
+  .col-md-6 {
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-text {
+    font-size: 1.3rem;
+  }
+  .brand-title {
+    font-size: 1.8rem;
+  }
+  .footer-text {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* Global styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensures body and html take full height */
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Makes sure the container spans the full height of the viewport */
+}
+
+/* Top Header */
+.navbar {
+  margin-bottom: 0;
+}
+
+.dashboard-body {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+/* Left Panel */
+.left-panel {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 250px; /* Adjust width of the left sidebar */
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: start;
+  /* flex-direction: column; */
+  height: 100%; /* Ensures left panel takes full height */
+}
+
+.left-panel .logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.left-panel .nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.left-panel .nav-links li {
+  margin-bottom: 15px;
+}
+
+.left-panel .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.left-panel .nav-links li a:hover {
+  color: #ddd;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+  height: 100%; /* Ensures content takes up remaining height */
+  overflow-y: auto; /* If content overflows, make it scrollable */
+}
+
+.dashboard-content h2 {
+  margin-bottom: 20px;
+}
+
+.dashboard-content p {
+  font-size: 18px;
+}
