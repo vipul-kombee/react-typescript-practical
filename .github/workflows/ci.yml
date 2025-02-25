@@ -1,4 +1,4 @@
-name: React + TypeScript CI/CD Pipeline
+name: CI
 
 on:
   push:
@@ -9,31 +9,27 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v3
-
-      - name: Set up Node.js
+      
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
-      - name: Install dependencies
+          cache: 'npm'
+      
+      - name: Install Dependencies
         run: npm install
-
-      - name: Run linting
+      
+      - name: Lint Code
         run: npm run lint
-
-      - name: Run unit tests
+      
+      - name: Run Tests
         run: npm test
-
-      - name: Build project
+      
+      - name: Build Project
         run: npm run build
-
-      - name: Notify results
-        if: always()
-        run: |
-          echo "CI/CD Pipeline completed. Check the results here: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
